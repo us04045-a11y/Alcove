@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-cinzel: 'Cinzel', serif;
+    --font-italiana: 'Italiana', 'Playfair Display', Georgia, serif;
+    --font-instrument: 'Instrument Serif', Georgia, serif;
+    --font-syne: 'Syne', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --bg-canvas: #FAFBF9;
+    --color-pistachio: #C4E894;
+    --color-forest: #0F2A1A;
+    --color-forest-light: #1E4D30;
+    --color-pistachio-hover: #D4F3AA;
+    --color-border: #E0EBE2;
+    --color-surface: #FFFFFF;
+    --color-text: #0F2A1A;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: var(--bg-canvas);
+    color: var(--color-text);
+  }
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel);
+}
+
+.font-italiana {
+  font-family: var(--font-italiana);
+}
+
+.font-instrument {
+  font-family: var(--font-instrument);
+}
+
+.font-display {
+  font-family: var(--font-cinzel);
+}
+
+.font-syne {
+  font-family: var(--font-syne);
+}
+
+.font-mono-custom {
+  font-family: var(--font-mono);
+}
+
+/* 3D Perspective container */
+.perspective-container {
+  perspective: 1200px;
+  perspective-origin: center center;
+  transform-style: preserve-3d;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Custom scrollbar in White & Green Theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAFBF9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C8DDCB;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B7B4E;
+}
+
+/* Lenis smooth scrolling class */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Text Mask Reveal animation */
+.text-mask-hidden {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  transform: translateY(100%);
+}
+
+.text-mask-visible {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transform: translateY(0%);
+  transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Subtle architectural glass for Light White & Green Theme */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(224, 235, 226, 0.9);
+}
+
+.glass-pill {
+  background: rgba(240, 246, 238, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(196, 232, 148, 0.5);
+}
+
+/* Marquee / Infinite ticker */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee-fast {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-reverse 35s linear infinite;
+}
+
+.animate-marquee:hover,
+.animate-marquee-fast:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}

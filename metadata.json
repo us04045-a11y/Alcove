@@ -1,0 +1,6 @@
+{
+  "name": "ALCOVE — Crafted Coworking & Shared Spatial Architecture",
+  "description": "Award-winning experiential showcase for ALCOVE Coworking. Featuring bespoke acoustic alcoves, private executive studios, collaborative lounges, and high-performance modern workspace architecture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
